@@ -41,6 +41,8 @@ struct NetworkManager {
     
     func getNewRepositories(completion: @escaping(_ repositories: [Repository]?,_ error: String?)->()){
         router.request(.directories) { (data, response, error) in
+            
+            print("DATA = \(String(decoding: data!, as: UTF8.self))")
             if error != nil {
                 completion(nil, "Favor verificar a sua conexão com a internet.")
             }
@@ -53,9 +55,6 @@ struct NetworkManager {
                         completion(nil, NetworkResponse.noData.rawValue)
                         return
                     }
-                    
-                    print("DATA = \(data)")
-                    
                     do {
                         let apiResponse = try JSONDecoder().decode(RepositoriesApiResponse.self, from: responseData)
                         completion(apiResponse.items, nil)

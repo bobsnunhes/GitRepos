@@ -37,9 +37,9 @@ public enum GitHubApi: EndPointType {
         switch self {
         case .directories:
 //            return "search/repositories?q=language:Java&sort=stars"
-            return "search/repositories"
+            return "/search/repositories"
         case .directoryDetail(let owner, let repositoryID):
-            return "repos/\(owner)/\(repositoryID)/pulls"
+            return "/repos/\(owner)/\(repositoryID)/pulls"
         }
     }
     

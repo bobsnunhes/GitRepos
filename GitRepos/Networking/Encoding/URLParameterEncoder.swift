@@ -14,6 +14,8 @@ public struct URLParameterEncoder: ParameterEncoder {
     public static func encode(urlRequest: inout URLRequest, with parameters: Parameters) throws {
         guard let url = urlRequest.url else { throw NetworkError.missingURL}
         
+        print("URLRequest url = \(url)")
+        
         if var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false), !parameters.isEmpty {
             urlComponents.queryItems = [URLQueryItem]()
             
@@ -27,6 +29,7 @@ public struct URLParameterEncoder: ParameterEncoder {
         if urlRequest.value(forHTTPHeaderField: "Content-Type") == nil {
             urlRequest.setValue("application/x-www-form-urlencoded; charset=utf8", forHTTPHeaderField: "Content-Type")
         }
+        print("URLRequest url 2 = \(urlRequest)")
     }
 }
 

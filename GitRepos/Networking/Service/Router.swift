@@ -11,12 +11,12 @@ import Foundation
 class Router<EndPoint: EndPointType>: NetworkRouter {
     private var task: URLSessionTask?
     
+    //Processo de request do Router
     func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion) {
         let session = URLSession.shared
-        
         do{
             if let request = try self.buildRequest(from: route) {
-                task = session.dataTask(with: request, completionHandler: {data, response, error in completion(data, response, error)})
+                task = session.dataTask(with: request.url!, completionHandler: {data, response, error in completion(data, response, error)})
             }
         } catch {
             completion(nil, nil, error)
@@ -32,14 +32,14 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     
     //Converte o EndPoint para URLRequest que será passado para a sessão
     fileprivate func buildRequest(from route: EndPoint) throws -> URLRequest? {
-        var urlComponents = try URLComponents(url: route.baseURL, resolvingAgainstBaseURL: false)
+        var urlComponents = URLComponents(url: route.baseURL, resolvingAgainstBaseURL: false)
         
-//        https://api.github.com/search/repositories?q=language:Java&sort=stars
-       // https://swapi.co/api/people?search=obi%20wan%20kenobi&format=wookie
-
+        print("ROUTE PATH = \(route.path)")
+        urlComponents?.path = route.path
         urlComponents?.queryItems = route.queryItens
-        
+        print("URL = \(urlComponents!.url)")
         if let url = urlComponents!.url {
+            print("URL nao aguento mais = \(url)")
             var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
             
             request.httpMethod = route.httpMethod.rawValue
