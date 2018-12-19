@@ -80,42 +80,41 @@
 		6245EB8F21C97B8500CBB3CF /* GitRepos */ = {
 			isa = PBXGroup;
 			children = (
-				6245EBAD21C9A90900CBB3CF /* Application */,
-				6245EBAE21C9A91500CBB3CF /* Model */,
-				6245EBAF21C9A91B00CBB3CF /* ViewController */,
+				626F0BF121CAFCD50004EEB4 /* AppDelegate */,
+				6245EBAF21C9A91B00CBB3CF /* Controllers */,
+				6245EBAE21C9A91500CBB3CF /* Models */,
+				626F0BF221CAFDBC0004EEB4 /* Storyboards */,
 				6245EBB021C9A93900CBB3CF /* Networking */,
-				6245EB9421C97B8500CBB3CF /* Main.storyboard */,
-				6245EB9721C97B8700CBB3CF /* Assets.xcassets */,
-				6245EB9921C97B8700CBB3CF /* LaunchScreen.storyboard */,
-				6245EB9C21C97B8700CBB3CF /* Info.plist */,
+				626F0BF321CAFDDD0004EEB4 /* Resources */,
+				6245EBAD21C9A90900CBB3CF /* SupportFiles */,
 			);
 			path = GitRepos;
 			sourceTree = "<group>";
 		};
-		6245EBAD21C9A90900CBB3CF /* Application */ = {
+		6245EBAD21C9A90900CBB3CF /* SupportFiles */ = {
 			isa = PBXGroup;
 			children = (
-				6245EB9021C97B8500CBB3CF /* AppDelegate.swift */,
+				6245EB9C21C97B8700CBB3CF /* Info.plist */,
 			);
-			path = Application;
+			path = SupportFiles;
 			sourceTree = "<group>";
 		};
-		6245EBAE21C9A91500CBB3CF /* Model */ = {
+		6245EBAE21C9A91500CBB3CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				626F0BEC21CAEAB10004EEB4 /* Repository.swift */,
 				6245EBA421C9891300CBB3CF /* RepositoriesModel.swift */,
 				6245EBD121C9EFC000CBB3CF /* Owner.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		6245EBAF21C9A91B00CBB3CF /* ViewController */ = {
+		6245EBAF21C9A91B00CBB3CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				6245EB9221C97B8500CBB3CF /* ReposViewController.swift */,
+				626F0BF021CAFAE30004EEB4 /* Repositories */,
 			);
-			path = ViewController;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		6245EBB021C9A93900CBB3CF /* Networking */ = {
@@ -165,6 +164,39 @@
 				6245EBD421C9F57200CBB3CF /* NetworkManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		626F0BF021CAFAE30004EEB4 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				6245EB9221C97B8500CBB3CF /* ReposViewController.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		626F0BF121CAFCD50004EEB4 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				6245EB9021C97B8500CBB3CF /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		626F0BF221CAFDBC0004EEB4 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				6245EB9421C97B8500CBB3CF /* Main.storyboard */,
+				6245EB9921C97B8700CBB3CF /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		626F0BF321CAFDDD0004EEB4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6245EB9721C97B8700CBB3CF /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
