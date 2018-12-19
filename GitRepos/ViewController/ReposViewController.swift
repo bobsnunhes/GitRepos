@@ -27,7 +27,10 @@ class ReposViewController: UIViewController {
             }
             
             if let repositories = repositories {
-                print(repositories)
+                
+                for repos in repositories {
+                    print(repos.id)
+                }
             }
         }
     }

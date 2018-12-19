@@ -24,6 +24,7 @@
 		6245EBD021C9C93800CBB3CF /* GitHubApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245EBCF21C9C93800CBB3CF /* GitHubApi.swift */; };
 		6245EBD221C9EFC000CBB3CF /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245EBD121C9EFC000CBB3CF /* Owner.swift */; };
 		6245EBD521C9F57200CBB3CF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245EBD421C9F57200CBB3CF /* NetworkManager.swift */; };
+		626F0BED21CAEAB10004EEB4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626F0BEC21CAEAB10004EEB4 /* Repository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		6245EBCF21C9C93800CBB3CF /* GitHubApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubApi.swift; sourceTree = "<group>"; };
 		6245EBD121C9EFC000CBB3CF /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		6245EBD421C9F57200CBB3CF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		626F0BEC21CAEAB10004EEB4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 		6245EBAE21C9A91500CBB3CF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				626F0BEC21CAEAB10004EEB4 /* Repository.swift */,
 				6245EBA421C9891300CBB3CF /* RepositoriesModel.swift */,
 				6245EBD121C9EFC000CBB3CF /* Owner.swift */,
 			);
@@ -237,6 +240,7 @@
 			files = (
 				6245EBC821C9B8A600CBB3CF /* JSONParameterEncoder.swift in Sources */,
 				6245EBCA21C9B97300CBB3CF /* NetworkRouter.swift in Sources */,
+				626F0BED21CAEAB10004EEB4 /* Repository.swift in Sources */,
 				6245EBC121C9B21800CBB3CF /* HTTPTask.swift in Sources */,
 				6245EB9321C97B8500CBB3CF /* ReposViewController.swift in Sources */,
 				6245EBCC21C9BCBA00CBB3CF /* Router.swift in Sources */,

@@ -11,7 +11,7 @@ import Foundation
 class Router<EndPoint: EndPointType>: NetworkRouter {
     private var task: URLSessionTask?
     
-    //Processo de request do Router
+    //Cria o resquest e com ele cria e inicia uma task.
     func request(_ route: EndPoint, completion: @escaping NetworkRouterCompletion) {
         let session = URLSession.shared
         do{
@@ -34,12 +34,10 @@ class Router<EndPoint: EndPointType>: NetworkRouter {
     fileprivate func buildRequest(from route: EndPoint) throws -> URLRequest? {
         var urlComponents = URLComponents(url: route.baseURL, resolvingAgainstBaseURL: false)
         
-        print("ROUTE PATH = \(route.path)")
         urlComponents?.path = route.path
         urlComponents?.queryItems = route.queryItens
-        print("URL = \(urlComponents!.url)")
+    
         if let url = urlComponents!.url {
-            print("URL nao aguento mais = \(url)")
             var request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 10.0)
             
             request.httpMethod = route.httpMethod.rawValue
