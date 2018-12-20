@@ -65,14 +65,26 @@ extension ReposViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.branchName.text = self.repositories.items[indexPath.row].name
         cell.branchDescription.text = self.repositories.items[indexPath.row].description
+        cell.webURL.text = self.repositories.items[indexPath.row].htmlURL
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+    
     private func setupRepositoriesTableView(){
+        //Associa Delegates e Datasources
         repositoriesTableView.delegate = self
         repositoriesTableView.dataSource = self
-
+        
+        //Registra a custom cell
         repositoriesTableView.register(UINib(nibName: repositoryTableViewCellName, bundle: nil), forCellReuseIdentifier: repositoryCellReuseID)
+        
+        //Dimensiona a tableview automaticamente
+        repositoriesTableView.estimatedRowHeight = 68.0
+        repositoriesTableView.rowHeight = UITableView.automaticDimension
+        
     }
 }
