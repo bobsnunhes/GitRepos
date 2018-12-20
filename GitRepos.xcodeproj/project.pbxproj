@@ -12,7 +12,7 @@
 		6245EB9621C97B8500CBB3CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6245EB9421C97B8500CBB3CF /* Main.storyboard */; };
 		6245EB9821C97B8700CBB3CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6245EB9721C97B8700CBB3CF /* Assets.xcassets */; };
 		6245EB9B21C97B8700CBB3CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6245EB9921C97B8700CBB3CF /* LaunchScreen.storyboard */; };
-		6245EBA521C9891300CBB3CF /* RepositoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245EBA421C9891300CBB3CF /* RepositoriesModel.swift */; };
+		6245EBA521C9891300CBB3CF /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245EBA421C9891300CBB3CF /* Repositories.swift */; };
 		6245EBBD21C9B15200CBB3CF /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245EBBC21C9B15200CBB3CF /* EndPointType.swift */; };
 		6245EBBF21C9B1BF00CBB3CF /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245EBBE21C9B1BF00CBB3CF /* HTTPMethod.swift */; };
 		6245EBC121C9B21800CBB3CF /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245EBC021C9B21800CBB3CF /* HTTPTask.swift */; };
@@ -25,6 +25,8 @@
 		6245EBD221C9EFC000CBB3CF /* Owner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245EBD121C9EFC000CBB3CF /* Owner.swift */; };
 		6245EBD521C9F57200CBB3CF /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6245EBD421C9F57200CBB3CF /* NetworkManager.swift */; };
 		626F0BED21CAEAB10004EEB4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626F0BEC21CAEAB10004EEB4 /* Repository.swift */; };
+		626F0BF821CB283A0004EEB4 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626F0BF621CB283A0004EEB4 /* RepositoryTableViewCell.swift */; };
+		626F0BF921CB283A0004EEB4 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 626F0BF721CB283A0004EEB4 /* RepositoryTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +37,7 @@
 		6245EB9721C97B8700CBB3CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6245EB9A21C97B8700CBB3CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6245EB9C21C97B8700CBB3CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6245EBA421C9891300CBB3CF /* RepositoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoriesModel.swift; sourceTree = "<group>"; };
+		6245EBA421C9891300CBB3CF /* Repositories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 		6245EBBC21C9B15200CBB3CF /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
 		6245EBBE21C9B1BF00CBB3CF /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		6245EBC021C9B21800CBB3CF /* HTTPTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
@@ -48,6 +50,8 @@
 		6245EBD121C9EFC000CBB3CF /* Owner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Owner.swift; sourceTree = "<group>"; };
 		6245EBD421C9F57200CBB3CF /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		626F0BEC21CAEAB10004EEB4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
+		626F0BF621CB283A0004EEB4 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
+		626F0BF721CB283A0004EEB4 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +87,7 @@
 				626F0BF121CAFCD50004EEB4 /* AppDelegate */,
 				6245EBAF21C9A91B00CBB3CF /* Controllers */,
 				6245EBAE21C9A91500CBB3CF /* Models */,
+				626F0BF421CAFEDD0004EEB4 /* Views */,
 				626F0BF221CAFDBC0004EEB4 /* Storyboards */,
 				6245EBB021C9A93900CBB3CF /* Networking */,
 				626F0BF321CAFDDD0004EEB4 /* Resources */,
@@ -102,9 +107,7 @@
 		6245EBAE21C9A91500CBB3CF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				626F0BEC21CAEAB10004EEB4 /* Repository.swift */,
-				6245EBA421C9891300CBB3CF /* RepositoriesModel.swift */,
-				6245EBD121C9EFC000CBB3CF /* Owner.swift */,
+				626F0BF521CAFF040004EEB4 /* Repositories */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -199,6 +202,33 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		626F0BF421CAFEDD0004EEB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				626F0BFA21CB28430004EEB4 /* Repositories */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		626F0BF521CAFF040004EEB4 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				626F0BEC21CAEAB10004EEB4 /* Repository.swift */,
+				6245EBA421C9891300CBB3CF /* Repositories.swift */,
+				6245EBD121C9EFC000CBB3CF /* Owner.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		626F0BFA21CB28430004EEB4 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				626F0BF621CB283A0004EEB4 /* RepositoryTableViewCell.swift */,
+				626F0BF721CB283A0004EEB4 /* RepositoryTableViewCell.xib */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -260,6 +290,7 @@
 				6245EB9B21C97B8700CBB3CF /* LaunchScreen.storyboard in Resources */,
 				6245EB9821C97B8700CBB3CF /* Assets.xcassets in Resources */,
 				6245EB9621C97B8500CBB3CF /* Main.storyboard in Resources */,
+				626F0BF921CB283A0004EEB4 /* RepositoryTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,10 +308,11 @@
 				6245EB9321C97B8500CBB3CF /* ReposViewController.swift in Sources */,
 				6245EBCC21C9BCBA00CBB3CF /* Router.swift in Sources */,
 				6245EBC421C9B34A00CBB3CF /* ParameterEncoding.swift in Sources */,
-				6245EBA521C9891300CBB3CF /* RepositoriesModel.swift in Sources */,
+				6245EBA521C9891300CBB3CF /* Repositories.swift in Sources */,
 				6245EBBF21C9B1BF00CBB3CF /* HTTPMethod.swift in Sources */,
 				6245EB9121C97B8500CBB3CF /* AppDelegate.swift in Sources */,
 				6245EBD221C9EFC000CBB3CF /* Owner.swift in Sources */,
+				626F0BF821CB283A0004EEB4 /* RepositoryTableViewCell.swift in Sources */,
 				6245EBBD21C9B15200CBB3CF /* EndPointType.swift in Sources */,
 				6245EBD521C9F57200CBB3CF /* NetworkManager.swift in Sources */,
 				6245EBC621C9B51000CBB3CF /* URLParameterEncoder.swift in Sources */,
@@ -432,7 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CRVTY582ZT;
-				INFOPLIST_FILE = GitRepos/Info.plist;
+				INFOPLIST_FILE = GitRepos/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -450,7 +482,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = CRVTY582ZT;
-				INFOPLIST_FILE = GitRepos/Info.plist;
+				INFOPLIST_FILE = GitRepos/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

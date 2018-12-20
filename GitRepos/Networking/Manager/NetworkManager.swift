@@ -39,8 +39,8 @@ struct NetworkManager {
         }
     }
     
-    func getNewRepositories(completion: @escaping(_ repositories: [Repository]?,_ error: String?)->()){
-        router.request(.directories) { (data, response, error) in
+    func getNewRepositories(completion: @escaping(_ repositories: Repositories?,_ error: String?)->()){
+        router.request(.directories(page: "1")) { (data, response, error) in
             
 //            print("DATA = \(String(decoding: data!, as: UTF8.self))")
             if error != nil {
@@ -56,8 +56,8 @@ struct NetworkManager {
                         return
                     }
                     do {
-                        let apiResponse = try JSONDecoder().decode(RepositoriesApiResponse.self, from: responseData)
-                        completion(apiResponse.items, nil)
+                        let apiResponse = try JSONDecoder().decode(Repositories.self, from: responseData)
+                        completion(apiResponse, nil)
                     } catch let error {
                         completion(nil, error.localizedDescription)
                     }

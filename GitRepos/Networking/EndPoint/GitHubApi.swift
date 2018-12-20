@@ -9,20 +9,22 @@
 import Foundation
 
 public enum GitHubApi: EndPointType {
+    
+    case directories(page: String)
+    case directoryDetail(owner: String, repositoryID: String)
+    
     var queryItens: [URLQueryItem]? {
         switch self {
-        case .directories:
+        case .directories(let page):
             return [
                 URLQueryItem(name: "q", value: "language:Java"),
-                URLQueryItem(name: "sort", value: "starts")
+                URLQueryItem(name: "sort", value: "starts"),
+                URLQueryItem(name: "page", value: page)
             ]
         case .directoryDetail:
             return nil
         }
     }
-    
-    case directories
-    case directoryDetail(owner: String, repositoryID: String)
     
     var enviromentBaseURL: String {
         return "https://api.github.com/"

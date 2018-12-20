@@ -1,5 +1,5 @@
 //
-//  RepositoryModel.swift
+//  Repositories.swift
 //  GitRepos
 //
 //  Created by roberto fernandes filho on 18/12/2018.
@@ -9,13 +9,16 @@
 import Foundation
 
 //Struct criada para trazer os repositorios
-struct RepositoriesApiResponse {
-    let totalCount: Int
-    let incompleteResults: Bool
-    let items: [Repository]
+struct Repositories {
+    var totalCount: Int = 0
+    var incompleteResults: Bool = false
+    var items = [Repository]()
+    
+    init() {}
+    
 }
 
-extension RepositoriesApiResponse: Decodable {
+extension Repositories: Decodable {
     private enum RepositoriesApiResponseCodingKeys: String, CodingKey {
         case totalCount = "total_count"
         case incompleteResults = "incomplete_results"
