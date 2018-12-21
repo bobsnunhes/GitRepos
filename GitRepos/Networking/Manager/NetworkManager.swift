@@ -39,8 +39,8 @@ struct NetworkManager {
         }
     }
     
-    func getNewRepositories(completion: @escaping(_ repositories: Repositories?,_ error: String?)->()){
-        router.request(.directories(page: "1")) { (data, response, error) in
+    func getNewRepositories(page: Int, completion: @escaping(_ repositories: Repositories?,_ error: String?)->()){
+        router.request(.directories(page: "\(page)")) { (data, response, error) in
             
 //            print("DATA = \(String(decoding: data!, as: UTF8.self))")
             if error != nil {

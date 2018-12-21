@@ -216,23 +216,31 @@
                             </stackView>
                         </subviews>
                     </stackView>
+                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8g8-7K-g5U">
+                        <rect key="frame" x="150" y="127.5" width="20" height="20"/>
+                    </activityIndicatorView>
                 </subviews>
                 <constraints>
                     <constraint firstItem="SAk-cd-D8Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="3" id="EbB-DD-ckG"/>
                     <constraint firstAttribute="bottomMargin" secondItem="SAk-cd-D8Q" secondAttribute="bottom" constant="3" id="Hbb-9y-OCC"/>
+                    <constraint firstItem="8g8-7K-g5U" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="el1-DQ-4tO"/>
+                    <constraint firstItem="8g8-7K-g5U" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="jxV-VX-45D"/>
                     <constraint firstAttribute="trailingMargin" secondItem="SAk-cd-D8Q" secondAttribute="trailing" constant="3" id="s2G-1d-ypQ"/>
                     <constraint firstItem="SAk-cd-D8Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="3" id="smT-2O-E9y"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="activityIndicator" destination="8g8-7K-g5U" id="Kni-S6-S5A"/>
                 <outlet property="author" destination="67U-em-uP1" id="Vnk-EM-Fu6"/>
                 <outlet property="branchDescription" destination="am9-Wd-J1Q" id="HHS-Ag-uuT"/>
                 <outlet property="branchName" destination="i7v-RB-5HP" id="N4V-fb-vOT"/>
                 <outlet property="creationDate" destination="Isu-6Z-3CY" id="OZx-J2-2wC"/>
                 <outlet property="defaultBranch" destination="r0J-UB-I3T" id="z80-4u-fdP"/>
+                <outlet property="forks" destination="THP-PG-Emr" id="JRr-ti-b02"/>
                 <outlet property="language" destination="I2d-5z-cd1" id="B7h-Me-rYr"/>
                 <outlet property="lastUpdate" destination="KmK-6D-5tV" id="pXN-x0-XF2"/>
+                <outlet property="stargazers" destination="dc3-Xc-fgf" id="vsP-Yi-SHH"/>
                 <outlet property="webURL" destination="hc9-M8-pWR" id="CJz-FK-WQn"/>
             </connections>
             <point key="canvasLocation" x="129.59999999999999" y="68.365817091454275"/>

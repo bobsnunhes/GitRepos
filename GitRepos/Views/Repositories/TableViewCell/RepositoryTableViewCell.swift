@@ -17,13 +17,32 @@ class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var defaultBranch: UILabel!
     @IBOutlet weak var creationDate: UILabel!
     @IBOutlet weak var lastUpdate: UILabel!
+    @IBOutlet weak var stargazers: UILabel!
+    @IBOutlet weak var forks: UILabel!
+    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        isUserInteractionEnabled = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    func startLoading() {
+        DispatchQueue.main.async {
+            self.activityIndicator.startAnimating()
+            self.isUserInteractionEnabled = false
+        }
+    }
+    
+    func stopLoading() {
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+            self.isUserInteractionEnabled = true
+        }
     }
     
 }

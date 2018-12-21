@@ -223,10 +223,18 @@
 		626F0BFA21CB28430004EEB4 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				627211A021CC2DEC00E9A458 /* TableViewCell */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		627211A021CC2DEC00E9A458 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
 				626F0BF621CB283A0004EEB4 /* RepositoryTableViewCell.swift */,
 				626F0BF721CB283A0004EEB4 /* RepositoryTableViewCell.xib */,
 			);
-			path = Repositories;
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
