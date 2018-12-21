@@ -16,6 +16,7 @@ class ReposViewController: UIViewController {
     
     private let repositoryTableViewCellName = "RepositoryTableViewCell"
     private let repositoryCellReuseID = "repositoryCell"
+    private let repositoryDetailSegue = "repositoryDetailSegue"
     
     private var indexOfPageRequest: Int = 1
     
@@ -48,6 +49,14 @@ class ReposViewController: UIViewController {
 
 //Controle da TableView
 extension ReposViewController: UITableViewDelegate, UITableViewDataSource {
+    //MARK: didSelectRowAt - Chama tela de detalhes quando usuário clica na linha da tabela
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedRepository: Repository = repositories.items[indexPath.row]
+        
+        performSegue(withIdentifier: repositoryDetailSegue, sender: selectedRepository)
+        
+    }
+    
     //MARK: numberOfRowsInSection - Controla a quantidade de linhas por seção.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.repositories.items.count
@@ -95,10 +104,7 @@ extension ReposViewController: UITableViewDelegate, UITableViewDataSource {
         fetchingMore = true
         print("page = \(indexOfPageRequest)")
         self.indexOfPageRequest += 1
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            self.loadRepositories()
-        }
+        self.loadRepositories()
     }
     
     //MARK: setupRepositoriesTableView - Configuração inicial da table view dos repositórios.
