@@ -9,7 +9,7 @@
 import Foundation
 
 struct NetworkManager {
-//    static let router = Router<GitHubApi>()
+
     private let router = Router<GitHubApi>()
     
     init() {}
@@ -29,6 +29,7 @@ struct NetworkManager {
         case failure(String)
     }
     
+    //MARK: Tratamento de StatusCode
     fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String> {
         switch response.statusCode {
         case 200...299: return .success
@@ -41,10 +42,8 @@ struct NetworkManager {
     
     func getNewRepositories(page: Int, completion: @escaping(_ repositories: Repositories?,_ error: String?)->()){
         router.request(.directories(page: "\(page)")) { (data, response, error) in
-            
-//            print("DATA = \(String(decoding: data!, as: UTF8.self))")
             if error != nil {
-                completion(nil, "Favor verificar a sua conexão com a internet.")
+                completion(nil, NetworkResponse.failed.rawValue)
             }
             
             if let response = response as? HTTPURLResponse {
@@ -58,6 +57,33 @@ struct NetworkManager {
                     do {
                         let apiResponse = try JSONDecoder().decode(Repositories.self, from: responseData)
                         completion(apiResponse, nil)
+                    } catch let error {
+                        completion(nil, error.localizedDescription)
+                    }
+                case .failure(let networkFailureError): completion(nil, networkFailureError)
+                }
+            }
+        }
+    }
+    
+    func getRepositoryDetail(owner: String, repository: String, completion: @escaping(_ repositoryPushDetails: RepositoryPushDetails?, _ error: String?) ->()) {
+        router.request(.directoryDetail(owner: owner, repository: repository)) { (data, response, error) in
+            if error != nil {
+                completion(nil, NetworkResponse.failed.rawValue)
+            }
+            
+            if let response = response as? HTTPURLResponse {
+                let result = self.handleNetworkResponse(response)
+                
+                switch result {
+                case .success:
+                    guard let responseData = data else {
+                        completion(nil, NetworkResponse.noData.rawValue)
+                        return
+                    }
+                    do {
+                        let apiResponse = try JSONDecoder().decode(RepositoryPushDetails.self, from: responseData)
+                        completion(apiResponse,nil)
                     } catch let error {
                         completion(nil, error.localizedDescription)
                     }

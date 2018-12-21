@@ -11,7 +11,7 @@ import Foundation
 public enum GitHubApi: EndPointType {
     
     case directories(page: String)
-    case directoryDetail(owner: String, repositoryID: String)
+    case directoryDetail(owner: String, repository: String)
     
     var queryItens: [URLQueryItem]? {
         switch self {
@@ -40,8 +40,8 @@ public enum GitHubApi: EndPointType {
         case .directories:
 //            return "search/repositories?q=language:Java&sort=stars"
             return "/search/repositories"
-        case .directoryDetail(let owner, let repositoryID):
-            return "/repos/\(owner)/\(repositoryID)/pulls"
+        case .directoryDetail(let owner, let repository):
+            return "/repos/\(owner)/\(repository)/pulls"
         }
     }
     
