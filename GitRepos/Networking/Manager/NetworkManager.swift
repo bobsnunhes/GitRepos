@@ -16,12 +16,12 @@ struct NetworkManager {
     //Tratamento de erros para o response da API
     enum NetworkResponse: String {
         case success
-        case authenticationError = "You need to be authenticated first."
-        case badRequest = "Bad Request"
-        case outdated = "The URL you request is outdated."
-        case failed = "Network request failed."
-        case noData = "Response returned with no data to decode."
-        case unableToDecode = "We could not decode the response."
+        case authenticationError = "Erro de autenticação."
+        case badRequest = "Erro ao realizar o request."
+        case outdated = "A URL utilizada no request está desatualizada."
+        case failed = "Falha de rede, verifique sua conexão."
+        case noData = "O response não retornou dados."
+        case unableToDecode = "Não foi possível realizar o decode no response."
     }
 
     enum Result<String> {
@@ -40,6 +40,7 @@ struct NetworkManager {
         }
     }
     
+    //MARK: getNewRepositories - Busca os repositórios por página
     func getNewRepositories(page: Int, completion: @escaping(_ repositories: Repositories?,_ error: String?)->()){
         router.request(.directories(page: "\(page)")) { (data, response, error) in
             if error != nil {
@@ -66,7 +67,8 @@ struct NetworkManager {
         }
     }
     
-    func getRepositoryDetail(owner: String, repository: String, completion: @escaping(_ repositoryPushDetails: RepositoryPushDetails?, _ error: String?) ->()) {
+    //MARK: getRepositoryDetail - Busca os detalhes do pull de determinado repositório
+    func getRepositoryDetail(owner: String, repository: String, completion: @escaping(_ repositoryPullDetails: RepositoryPullDetails?, _ error: String?) ->()) {
         router.request(.directoryDetail(owner: owner, repository: repository)) { (data, response, error) in
             if error != nil {
                 completion(nil, NetworkResponse.failed.rawValue)
@@ -82,7 +84,8 @@ struct NetworkManager {
                         return
                     }
                     do {
-                        let apiResponse = try JSONDecoder().decode(RepositoryPushDetails.self, from: responseData)
+                        let apiResponse = try JSONDecoder().decode(RepositoryPullDetails.self, from: responseData)
+                       
                         completion(apiResponse,nil)
                     } catch let error {
                         completion(nil, error.localizedDescription)

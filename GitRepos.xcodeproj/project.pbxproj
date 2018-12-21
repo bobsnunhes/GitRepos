@@ -27,9 +27,12 @@
 		626F0BED21CAEAB10004EEB4 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626F0BEC21CAEAB10004EEB4 /* Repository.swift */; };
 		626F0BF821CB283A0004EEB4 /* RepositoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 626F0BF621CB283A0004EEB4 /* RepositoryTableViewCell.swift */; };
 		626F0BF921CB283A0004EEB4 /* RepositoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 626F0BF721CB283A0004EEB4 /* RepositoryTableViewCell.xib */; };
-		627211A421CC932700E9A458 /* RepositoryPushDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627211A321CC932700E9A458 /* RepositoryPushDetails.swift */; };
+		627211A421CC932700E9A458 /* RepositoryPullDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627211A321CC932700E9A458 /* RepositoryPullDetails.swift */; };
 		627211A621CC934500E9A458 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627211A521CC934500E9A458 /* Label.swift */; };
 		627211A821CC935200E9A458 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 627211A721CC935200E9A458 /* User.swift */; };
+		62D0152B21CD71EC005B9E57 /* PullDetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D0152921CD71EC005B9E57 /* PullDetailsTableViewCell.swift */; };
+		62D0152C21CD71EC005B9E57 /* PullDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62D0152A21CD71EC005B9E57 /* PullDetailsTableViewCell.xib */; };
+		62D0152E21CD7B11005B9E57 /* RepositoryPullDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62D0152D21CD7B11005B9E57 /* RepositoryPullDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,9 +58,12 @@
 		626F0BEC21CAEAB10004EEB4 /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		626F0BF621CB283A0004EEB4 /* RepositoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryTableViewCell.swift; sourceTree = "<group>"; };
 		626F0BF721CB283A0004EEB4 /* RepositoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryTableViewCell.xib; sourceTree = "<group>"; };
-		627211A321CC932700E9A458 /* RepositoryPushDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryPushDetails.swift; sourceTree = "<group>"; };
+		627211A321CC932700E9A458 /* RepositoryPullDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryPullDetails.swift; sourceTree = "<group>"; };
 		627211A521CC934500E9A458 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		627211A721CC935200E9A458 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		62D0152921CD71EC005B9E57 /* PullDetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PullDetailsTableViewCell.swift; sourceTree = "<group>"; };
+		62D0152A21CD71EC005B9E57 /* PullDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PullDetailsTableViewCell.xib; sourceTree = "<group>"; };
+		62D0152D21CD7B11005B9E57 /* RepositoryPullDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryPullDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +128,8 @@
 		6245EBAF21C9A91B00CBB3CF /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				627211A221CC880900E9A458 /* Push Details */,
 				626F0BF021CAFAE30004EEB4 /* Repositories */,
+				627211A221CC880900E9A458 /* Push Details */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +219,7 @@
 		626F0BF421CAFEDD0004EEB4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				62D0152821CD71B8005B9E57 /* Push Details */,
 				626F0BFA21CB28430004EEB4 /* Repositories */,
 			);
 			path = Views;
@@ -248,7 +255,7 @@
 		627211A121CC87E900E9A458 /* Push Details */ = {
 			isa = PBXGroup;
 			children = (
-				627211A321CC932700E9A458 /* RepositoryPushDetails.swift */,
+				627211A321CC932700E9A458 /* RepositoryPullDetails.swift */,
 				627211A521CC934500E9A458 /* Label.swift */,
 				627211A721CC935200E9A458 /* User.swift */,
 			);
@@ -258,6 +265,16 @@
 		627211A221CC880900E9A458 /* Push Details */ = {
 			isa = PBXGroup;
 			children = (
+				62D0152D21CD7B11005B9E57 /* RepositoryPullDetailsViewController.swift */,
+			);
+			path = "Push Details";
+			sourceTree = "<group>";
+		};
+		62D0152821CD71B8005B9E57 /* Push Details */ = {
+			isa = PBXGroup;
+			children = (
+				62D0152921CD71EC005B9E57 /* PullDetailsTableViewCell.swift */,
+				62D0152A21CD71EC005B9E57 /* PullDetailsTableViewCell.xib */,
 			);
 			path = "Push Details";
 			sourceTree = "<group>";
@@ -321,6 +338,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6245EB9B21C97B8700CBB3CF /* LaunchScreen.storyboard in Resources */,
+				62D0152C21CD71EC005B9E57 /* PullDetailsTableViewCell.xib in Resources */,
 				6245EB9821C97B8700CBB3CF /* Assets.xcassets in Resources */,
 				6245EB9621C97B8500CBB3CF /* Main.storyboard in Resources */,
 				626F0BF921CB283A0004EEB4 /* RepositoryTableViewCell.xib in Resources */,
@@ -336,14 +354,16 @@
 			files = (
 				6245EBC821C9B8A600CBB3CF /* JSONParameterEncoder.swift in Sources */,
 				6245EBCA21C9B97300CBB3CF /* NetworkRouter.swift in Sources */,
-				627211A421CC932700E9A458 /* RepositoryPushDetails.swift in Sources */,
+				627211A421CC932700E9A458 /* RepositoryPullDetails.swift in Sources */,
 				626F0BED21CAEAB10004EEB4 /* Repository.swift in Sources */,
 				6245EBC121C9B21800CBB3CF /* HTTPTask.swift in Sources */,
 				6245EB9321C97B8500CBB3CF /* ReposViewController.swift in Sources */,
 				6245EBCC21C9BCBA00CBB3CF /* Router.swift in Sources */,
 				6245EBC421C9B34A00CBB3CF /* ParameterEncoding.swift in Sources */,
+				62D0152E21CD7B11005B9E57 /* RepositoryPullDetailsViewController.swift in Sources */,
 				6245EBA521C9891300CBB3CF /* Repositories.swift in Sources */,
 				6245EBBF21C9B1BF00CBB3CF /* HTTPMethod.swift in Sources */,
+				62D0152B21CD71EC005B9E57 /* PullDetailsTableViewCell.swift in Sources */,
 				6245EB9121C97B8500CBB3CF /* AppDelegate.swift in Sources */,
 				6245EBD221C9EFC000CBB3CF /* Owner.swift in Sources */,
 				626F0BF821CB283A0004EEB4 /* RepositoryTableViewCell.swift in Sources */,

@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="1460" y="45"/>
         </scene>
-        <!--View Controller-->
+        <!--Repository Pull Details View Controller-->
         <scene sceneID="1ih-gU-dDZ">
             <objects>
-                <viewController id="bJt-0P-dh6" sceneMemberID="viewController">
+                <viewController id="bJt-0P-dh6" customClass="RepositoryPullDetailsViewController" customModule="GitRepos" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6dn-aO-Irm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

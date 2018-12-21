@@ -18,11 +18,13 @@ class ReposViewController: UIViewController {
     private let repositoryCellReuseID = "repositoryCell"
     private let repositoryDetailSegue = "repositoryDetailSegue"
     
+    //Controla a pagina a ser utilizada na URL
     private var indexOfPageRequest: Int = 1
     
     //Controla Fetch da tabela
     private var fetchingMore = false
     
+    //Instancia o network manager para chamar os métodos da API 
     private var networkManager: NetworkManager = {
         return NetworkManager()
     }()
@@ -45,6 +47,38 @@ class ReposViewController: UIViewController {
         
         loadRepositories()
     }
+    
+    //MARK: loadRepositories - Carrega os repositorios da API para a stuct de acordo com a pagina
+    private func loadRepositories(){
+        startLoadingTableView()
+        self.networkManager.getNewRepositories(page: indexOfPageRequest) { (repositories, error) in
+            if let error = error {
+                print(error)
+                self.stopLoadingTableView()
+            }
+            
+            if let repositories = repositories {
+                self.repositories.totalCount = repositories.totalCount
+                self.repositories.incompleteResults = repositories.incompleteResults
+                for newItem in repositories.items {
+                    self.repositories.items.append(newItem)
+                }
+                
+                DispatchQueue.main.async {
+                    self.repositoriesTableView.reloadData()
+                    self.stopLoadingTableView()
+                }
+            }
+        }
+    }
+    
+    //MARK: prepare for Segue - Passa informação do repositório selecionado para view de detalhes.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == repositoryDetailSegue), let selectedRepository = sender as? Repository {
+            let repositoryPullDetailsVC = segue.destination as! RepositoryPullDetailsViewController
+            repositoryPullDetailsVC.repository = selectedRepository
+        }
+    }
 }
 
 //Controle da TableView
@@ -54,7 +88,6 @@ extension ReposViewController: UITableViewDelegate, UITableViewDataSource {
         let selectedRepository: Repository = repositories.items[indexPath.row]
         
         performSegue(withIdentifier: repositoryDetailSegue, sender: selectedRepository)
-        
     }
     
     //MARK: numberOfRowsInSection - Controla a quantidade de linhas por seção.
@@ -121,35 +154,11 @@ extension ReposViewController: UITableViewDelegate, UITableViewDataSource {
         repositoriesTableView.rowHeight = UITableView.automaticDimension
     }
     
-    //MARK: loadRepositories - Carrega os repositorios da API para a stuct de acordo com a pagina
-    private func loadRepositories(){
-        startLoadingTableView()
-        self.networkManager.getNewRepositories(page: indexOfPageRequest) { (repositories, error) in
-            if let error = error {
-                print(error)
-                self.stopLoadingTableView()
-            }
-            
-            if let repositories = repositories {
-                self.repositories.totalCount = repositories.totalCount
-                self.repositories.incompleteResults = repositories.incompleteResults
-                for newItem in repositories.items {
-                    self.repositories.items.append(newItem)
-                }
-                
-                DispatchQueue.main.async {
-                    self.repositoriesTableView.reloadData()
-                    self.stopLoadingTableView()
-                }
-            }
-        }
-    }
-    
     //MARK: Controles para o Activity Indicator
     func startLoadingTableView(){
         DispatchQueue.main.async {
             self.blurEffectView.isHidden = false
-            self.blurEffectView.alpha = 0.8
+            self.blurEffectView.alpha = 1.0
             self.activityIndicator.startAnimating()
         }
     }
