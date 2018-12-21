@@ -63,10 +63,9 @@ class ReposViewController: UIViewController {
                 for newItem in repositories.items {
                     self.repositories.items.append(newItem)
                 }
-                
+                self.stopLoadingTableView()
                 DispatchQueue.main.async {
                     self.repositoriesTableView.reloadData()
-                    self.stopLoadingTableView()
                 }
             }
         }
@@ -106,8 +105,8 @@ extension ReposViewController: UITableViewDelegate, UITableViewDataSource {
         cell.webURL.text = self.repositories.items[indexPath.row].htmlURL
         cell.language.text = self.repositories.items[indexPath.row].language
         cell.defaultBranch.text = self.repositories.items[indexPath.row].defaultBranch
-        cell.creationDate.text = self.repositories.items[indexPath.row].createdAt
-        cell.lastUpdate.text = self.repositories.items[indexPath.row].updatedAt
+        cell.creationDate.text = self.repositories.items[indexPath.row].createdAt.parseToUserFormatTimeZone()
+        cell.lastUpdate.text = self.repositories.items[indexPath.row].updatedAt.parseToUserFormatTimeZone()
         cell.stargazers.text = String(self.repositories.items[indexPath.row].stargazersCount)
         cell.forks.text = String(self.repositories.items[indexPath.row].forksCount)
         

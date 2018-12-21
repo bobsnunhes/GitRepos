@@ -9,8 +9,9 @@
 import UIKit
 
 class PullDetailsTableViewCell: UITableViewCell {
+    
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var bottonMessage: UILabel!    
+    @IBOutlet weak var bottonMessage: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

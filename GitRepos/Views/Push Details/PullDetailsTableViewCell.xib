@@ -19,49 +19,62 @@
                 <rect key="frame" x="0.0" y="0.0" width="302" height="59.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="LZe-I3-F4q" userLabel="Geral">
-                        <rect key="frame" x="0.0" y="0.0" width="302" height="59.5"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LZe-I3-F4q" userLabel="Geral">
+                        <rect key="frame" x="0.0" y="0.0" width="302" height="60.5"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TLa-Mv-oBc" userLabel="Image Title">
-                                <rect key="frame" x="0.0" y="0.0" width="302" height="30"/>
+                            <stackView opaque="NO" tag="1" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="TLa-Mv-oBc" userLabel="Image Title">
+                                <rect key="frame" x="0.0" y="0.0" width="302" height="30.5"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pull" translatesAutoresizingMaskIntoConstraints="NO" id="Wqu-No-X5O">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="jVC-e7-CHN"/>
                                             <constraint firstAttribute="height" constant="30" id="vRC-92-bJT"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsW-BV-h8f">
-                                        <rect key="frame" x="38" y="0.0" width="264" height="30"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ng-Gz-NXz">
+                                        <rect key="frame" x="38" y="0.0" width="264" height="30.5"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uj2-px-FwZ">
-                                <rect key="frame" x="0.0" y="30" width="302" height="29.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" tag="1" contentMode="scaleToFill" distribution="fillProportionally" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="l6b-A9-KfM" userLabel="Botton Message">
+                                <rect key="frame" x="0.0" y="30.5" width="302" height="30"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h77-LX-kyy">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="NRf-T9-ukE"/>
+                                            <constraint firstAttribute="width" constant="30" id="lnM-u8-iVJ"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uj2-px-FwZ">
+                                        <rect key="frame" x="38" y="0.0" width="264" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" red="0.43529412150000002" green="0.4431372583" blue="0.47450980539999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                     </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="LZe-I3-F4q" secondAttribute="trailing" id="S8r-f7-0iz"/>
-                    <constraint firstAttribute="bottom" secondItem="LZe-I3-F4q" secondAttribute="bottom" id="h08-L8-QAw"/>
-                    <constraint firstItem="LZe-I3-F4q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="jrG-PQ-GEN"/>
-                    <constraint firstItem="LZe-I3-F4q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="yPh-3m-uB8"/>
+                    <constraint firstItem="LZe-I3-F4q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="F6m-qH-8Lg"/>
+                    <constraint firstItem="LZe-I3-F4q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FYz-nH-U6Y"/>
+                    <constraint firstAttribute="bottom" secondItem="LZe-I3-F4q" secondAttribute="bottom" id="HOS-LF-gpc"/>
+                    <constraint firstAttribute="trailing" secondItem="LZe-I3-F4q" secondAttribute="trailing" id="W50-y7-N3o"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="bottonMessage" destination="Uj2-px-FwZ" id="pa9-4E-FFg"/>
-                <outlet property="title" destination="vsW-BV-h8f" id="GlI-vp-AQt"/>
+                <outlet property="title" destination="9ng-Gz-NXz" id="Nsw-KT-jdd"/>
             </connections>
-            <point key="canvasLocation" x="108.8" y="115.14242878560721"/>
+            <point key="canvasLocation" x="108.8" y="107.0464767616192"/>
         </tableViewCell>
     </objects>
     <resources>

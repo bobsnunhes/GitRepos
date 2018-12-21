@@ -79,9 +79,53 @@
                     <view key="view" contentMode="scaleToFill" id="6dn-aO-Irm">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QGo-9r-mf2">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="pullDetailsCellID" id="BWY-dn-CmF" customClass="PullDetailsTableViewCell" customModule="GitRepos" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BWY-dn-CmF" id="r0f-mg-iF4">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zdq-48-xCE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="uQF-0r-Uq9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="dark"/>
+                            </visualEffectView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="wIJ-kZ-XQO">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="pb8-pu-Nih" firstAttribute="trailing" secondItem="QGo-9r-mf2" secondAttribute="trailing" id="5lc-rB-yDO"/>
+                            <constraint firstItem="QGo-9r-mf2" firstAttribute="leading" secondItem="pb8-pu-Nih" secondAttribute="leading" id="BHZ-8l-ZRm"/>
+                            <constraint firstItem="wIJ-kZ-XQO" firstAttribute="centerY" secondItem="6dn-aO-Irm" secondAttribute="centerY" id="EW3-LM-u9B"/>
+                            <constraint firstItem="Zdq-48-xCE" firstAttribute="leading" secondItem="pb8-pu-Nih" secondAttribute="leading" id="Ek9-0R-Cu0"/>
+                            <constraint firstItem="QGo-9r-mf2" firstAttribute="top" secondItem="pb8-pu-Nih" secondAttribute="top" id="JPO-E4-SMV"/>
+                            <constraint firstItem="pb8-pu-Nih" firstAttribute="bottom" secondItem="QGo-9r-mf2" secondAttribute="bottom" id="Kj6-Sj-TX0"/>
+                            <constraint firstItem="wIJ-kZ-XQO" firstAttribute="centerX" secondItem="6dn-aO-Irm" secondAttribute="centerX" id="laF-ip-Ek1"/>
+                            <constraint firstItem="pb8-pu-Nih" firstAttribute="trailing" secondItem="Zdq-48-xCE" secondAttribute="trailing" id="vkl-oX-5jE"/>
+                            <constraint firstItem="pb8-pu-Nih" firstAttribute="bottom" secondItem="Zdq-48-xCE" secondAttribute="bottom" id="xXE-bP-XJc"/>
+                            <constraint firstItem="Zdq-48-xCE" firstAttribute="top" secondItem="pb8-pu-Nih" secondAttribute="top" id="xmf-G9-KqL"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="pb8-pu-Nih"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="wIJ-kZ-XQO" id="W7n-af-MCJ"/>
+                        <outlet property="blurView" destination="Zdq-48-xCE" id="iyh-q9-xlV"/>
+                        <outlet property="pullTableView" destination="QGo-9r-mf2" id="PcC-cS-Ovy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EBk-uN-6cS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
